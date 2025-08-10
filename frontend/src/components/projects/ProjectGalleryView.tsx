@@ -15,27 +15,11 @@ interface ProjectGalleryViewProps {
 
 export default function ProjectGalleryView({ projects }: ProjectGalleryViewProps) {
 
-  const getPriorityColor = (priority: string) => {
-    const colorMap = {
-      high: 'border-l-red-500',
-      medium: 'border-l-yellow-500',
-      low: 'border-l-green-500'
-    }
-    return colorMap[priority as keyof typeof colorMap] || 'border-l-gray-500'
-  }
-
   const getDaysRemainingColor = (days: number) => {
     if (days < 0) return 'text-red-600'
     if (days < 7) return 'text-orange-600'
     if (days < 30) return 'text-yellow-600'
     return 'text-green-600'
-  }
-
-  const getProgressColor = (progress: number) => {
-    if (progress >= 90) return 'text-green-600'
-    if (progress >= 70) return 'text-blue-600'
-    if (progress >= 50) return 'text-yellow-600'
-    return 'text-gray-600'
   }
 
   return (
@@ -117,7 +101,6 @@ export default function ProjectGalleryView({ projects }: ProjectGalleryViewProps
               </div>
               <PhaseProgress 
                 phases={project.phases}
-                currentPhaseIndex={project.currentPhaseIndex}
                 size="md"
                 showLabels={true}
               />

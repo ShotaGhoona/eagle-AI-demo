@@ -5,14 +5,12 @@ import { cn } from '@/lib/utils'
 
 interface PhaseProgressProps {
   phases: PhaseStep[]
-  currentPhaseIndex: number
   size?: 'sm' | 'md' | 'lg'
   showLabels?: boolean
 }
 
 export default function PhaseProgress({ 
   phases, 
-  currentPhaseIndex, 
   size = 'md',
   showLabels = true 
 }: PhaseProgressProps) {
@@ -137,7 +135,7 @@ export default function PhaseProgress({
       {/* Phase labels */}
       {showLabels && (
         <div className="flex items-start justify-between">
-          {phases.map((phase, index) => (
+          {phases.map((phase) => (
             <div key={`label-${phase.id}`} className="flex-1 text-center">
               <div
                 className={cn(

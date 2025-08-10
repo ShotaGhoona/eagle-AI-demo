@@ -1,4 +1,4 @@
-import { BarChart, Users, Calendar, Target, TrendingUp } from "lucide-react";
+import { BarChart, Users, Calendar, Target } from "lucide-react";
 
 export default function Home() {
   return (

@@ -88,7 +88,6 @@ export default function ProjectTableView({ projects }: ProjectTableViewProps) {
                   <div className="w-full max-w-xs">
                     <PhaseProgress 
                       phases={project.phases}
-                      currentPhaseIndex={project.currentPhaseIndex}
                       size="sm"
                       showLabels={false}
                     />
