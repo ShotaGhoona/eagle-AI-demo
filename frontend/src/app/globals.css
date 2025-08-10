@@ -1,0 +1,232 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.75rem;
+  
+  /* Modern neutral base with subtle warmth */
+  --background: oklch(0.985 0.003 280);
+  --foreground: oklch(0.15 0.01 280);
+  
+  /* Enhanced card system with glass morphism influence */
+  --card: oklch(0.98 0.005 280);
+  --card-foreground: oklch(0.15 0.01 280);
+  --popover: oklch(0.99 0.005 280);
+  --popover-foreground: oklch(0.15 0.01 280);
+  
+  /* Modern violet-based primary with higher contrast */
+  --primary: oklch(0.55 0.22 285);
+  --primary-foreground: oklch(0.98 0.01 280);
+  
+  /* Sophisticated secondary palette */
+  --secondary: oklch(0.94 0.015 285);
+  --secondary-foreground: oklch(0.25 0.02 285);
+  
+  /* Refined muted tones */
+  --muted: oklch(0.96 0.008 280);
+  --muted-foreground: oklch(0.45 0.015 280);
+  
+  /* Modern accent with purple undertones */
+  --accent: oklch(0.92 0.025 285);
+  --accent-foreground: oklch(0.2 0.02 285);
+  
+  /* Enhanced error state */
+  --destructive: oklch(0.6 0.25 20);
+  --destructive-foreground: oklch(0.98 0.01 280);
+  
+  /* Subtle borders and inputs */
+  --border: oklch(0.88 0.012 280);
+  --input: oklch(0.96 0.008 280);
+  --ring: oklch(0.55 0.22 285);
+  
+  /* Modern chart colors with better accessibility */
+  --chart-1: oklch(0.6 0.2 285);   /* Primary violet */
+  --chart-2: oklch(0.65 0.18 320); /* Magenta */
+  --chart-3: oklch(0.6 0.18 160);  /* Green */
+  --chart-4: oklch(0.65 0.18 45);  /* Orange */
+  --chart-5: oklch(0.6 0.18 200);  /* Cyan */
+  
+  /* Enhanced sidebar with glass effect inspiration */
+  --sidebar: oklch(0.975 0.008 285);
+  --sidebar-foreground: oklch(0.2 0.015 285);
+  --sidebar-primary: oklch(0.55 0.22 285);
+  --sidebar-primary-foreground: oklch(0.98 0.01 280);
+  --sidebar-accent: oklch(0.9 0.02 285);
+  --sidebar-accent-foreground: oklch(0.15 0.02 285);
+  --sidebar-border: oklch(0.85 0.015 285);
+  --sidebar-ring: oklch(0.55 0.22 285);
+  
+  /* Additional modern design tokens */
+  --success: oklch(0.6 0.18 160);
+  --success-foreground: oklch(0.98 0.01 280);
+  --warning: oklch(0.7 0.18 45);
+  --warning-foreground: oklch(0.1 0.01 280);
+  --info: oklch(0.6 0.18 200);
+  --info-foreground: oklch(0.98 0.01 280);
+}
+
+.dark {
+  /* Rich dark background with subtle violet undertones */
+  --background: oklch(0.05 0.008 285);
+  --foreground: oklch(0.92 0.015 285);
+  
+  /* Enhanced dark cards with glass morphism */
+  --card: oklch(0.08 0.015 285);
+  --card-foreground: oklch(0.92 0.015 285);
+  --popover: oklch(0.1 0.015 285);
+  --popover-foreground: oklch(0.92 0.015 285);
+  
+  /* Vibrant primary for dark mode */
+  --primary: oklch(0.75 0.2 285);
+  --primary-foreground: oklch(0.05 0.008 285);
+  
+  /* Sophisticated dark secondary */
+  --secondary: oklch(0.15 0.02 285);
+  --secondary-foreground: oklch(0.85 0.015 285);
+  
+  /* Enhanced dark muted tones */
+  --muted: oklch(0.12 0.015 285);
+  --muted-foreground: oklch(0.6 0.018 285);
+  
+  /* Modern dark accent */
+  --accent: oklch(0.18 0.03 285);
+  --accent-foreground: oklch(0.88 0.015 285);
+  
+  /* Enhanced dark error state */
+  --destructive: oklch(0.7 0.22 15);
+  --destructive-foreground: oklch(0.95 0.01 285);
+  
+  /* Subtle dark borders */
+  --border: oklch(0.2 0.02 285);
+  --input: oklch(0.15 0.02 285);
+  --ring: oklch(0.75 0.2 285);
+  
+  /* Enhanced dark chart colors */
+  --chart-1: oklch(0.75 0.18 285); /* Bright violet */
+  --chart-2: oklch(0.78 0.16 320); /* Bright magenta */
+  --chart-3: oklch(0.75 0.16 160); /* Bright green */
+  --chart-4: oklch(0.78 0.16 45);  /* Bright orange */
+  --chart-5: oklch(0.75 0.16 200); /* Bright cyan */
+  
+  /* Premium dark sidebar */
+  --sidebar: oklch(0.06 0.012 285);
+  --sidebar-foreground: oklch(0.88 0.015 285);
+  --sidebar-primary: oklch(0.75 0.2 285);
+  --sidebar-primary-foreground: oklch(0.05 0.008 285);
+  --sidebar-accent: oklch(0.15 0.025 285);
+  --sidebar-accent-foreground: oklch(0.88 0.015 285);
+  --sidebar-border: oklch(0.18 0.02 285);
+  --sidebar-ring: oklch(0.75 0.2 285);
+  
+  /* Dark mode design tokens */
+  --success: oklch(0.75 0.16 160);
+  --success-foreground: oklch(0.05 0.008 285);
+  --warning: oklch(0.78 0.16 45);
+  --warning-foreground: oklch(0.05 0.008 285);
+  --info: oklch(0.75 0.16 200);
+  --info-foreground: oklch(0.05 0.008 285);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    /* Enhanced typography for better readability */
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Modern scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: oklch(var(--muted));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: oklch(var(--muted-foreground) / 0.3);
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(var(--muted-foreground) / 0.5);
+  }
+  
+  /* Enhanced focus states */
+  :focus-visible {
+    outline: 2px solid oklch(var(--ring));
+    outline-offset: 2px;
+  }
+  
+  /* Smooth transitions for theme changes */
+  * {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+  
+  /* Glass morphism utility classes */
+  .glass {
+    backdrop-filter: blur(20px) saturate(180%);
+    background-color: oklch(var(--card) / 0.8);
+    border: 1px solid oklch(var(--border) / 0.5);
+  }
+  
+  .glass-strong {
+    backdrop-filter: blur(40px) saturate(200%);
+    background-color: oklch(var(--card) / 0.95);
+    border: 1px solid oklch(var(--border) / 0.8);
+  }
+}
